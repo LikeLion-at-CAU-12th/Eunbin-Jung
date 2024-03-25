@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&family=Single+Day&display=swap');
+
+* {
+  font-family: "Single Day", cursive;
+}
+
+#title {
+  font-size: 60px;
+  text-align: center;
+}
+
+#subtitle {
+  font-size: 30px;
+    text-align: center;
+}
+
+#container {
+  width: 80%;
+  border: 3px solid black;
+  background-color: #FEFDED;
+  margin: auto;
+}
+
+body {
+  background-color: #E2F4C5;
+}
+
+img {
+  height: 700px;
+  margin-top: 5%;
+  margin-left: 32%;
+}
+
+p {
+  font-size: 25px;
+  margin-left: 43%;
+}
+
+.discription {
+  text-align: center;
+  font-size: 25px;
+  margin: auto;
+}
+
+a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 40px;
+  margin-top: 30px;
+}
+
+a:link {
+  color: #97E7E1;
+}
+
+a:visited {
+  color: #7AA2E3;
+}
+
+a:hover {
+  color: #6AD4DD;
+}
+
+a:active {
+  color: #F8F6E3;
+}
+
+#finish {
+  text-align: center;
+  font-size: 30px;
+}
