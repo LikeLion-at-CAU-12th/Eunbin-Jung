@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  font-family: "IBM Plex Sans KR", sans-serif;
+}
+
+header {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 5%;
+}
+
+.nav-item a {
+  text-decoration: none;
+  margin-left: 30px;
+  font-size: 1.2rem;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: yellowgreen;
+}
+
+a:active {
+  color: #6AD4DD;
+}
+
+#logo {
+  height: 100px;
+  width: 100px;
+  margin-left: 30px;
+}
+
+#introduction {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.hello {
+  font-size: large; 
+}
+
+#about, #career, #skills, #projects {
+  width: 80%;
+  margin: 20px auto;
+  margin-bottom: 70px;
+  box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+}
+
+#about h1, #career h1, #skills h1, #projects h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.about-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#profile-img {
+  width: 30%;
+  height: 70%;
+  border-radius: 50%;
+}
+
+.profile-icon {
+  width: 30px;
+  height: 30px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+li {
+  margin-bottom: 30px;
+}
+
+#profile-info span {
+  font-size: 1.7rem;
+  margin-left: 30px;
+}
+
+.career-info {
+  font-size: 1.2rem;
+  line-height: 50%;
+}
+
+.skills-img {
+  width: 100px;
+  height: 100px;
+}
+
+#skillsss {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+}
+
+#projects-img {
+  display: flex;
+  justify-content: center;
+}
+
+.pj1, .pj2 {
+  width: 500px;
+  height: 250px;
+}
+
+#pj1, #pj2 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+footer img {
+  width: 40px;
+  height: 40px;
+  margin: 0px 20px 0px 20px;
+}
+
+.break {
+  display: none;
+}
+
+@media all and (max-width: 700px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  #logo {
+    margin: auto;
+  }
+
+  .about-inner {
+    flex-wrap: wrap;
+  }
+
+  .break {
+    display: inline;
+  }
+}
+
+@media all and (max-width: 900px) {
+  #skillsss {
+    flex-wrap: wrap;
+  }
+}
+
+@media all and (max-width: 1400px) {
+  #projects-img {
+    flex-wrap: wrap;
+  }
+}
