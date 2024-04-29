@@ -1,4 +1,4 @@
-class Img {
+class Image {
   constructor(src, alt, className) {
     this.node = document.createElement('img');
     this.node.src = src;                     
@@ -7,4 +7,4 @@ class Img {
   }
 }
 
-export default Img;
+export default Image;

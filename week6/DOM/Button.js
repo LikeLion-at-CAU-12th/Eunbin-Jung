@@ -1,11 +1,11 @@
 import DOM from "./DOM.js";
-import Img from "./Img.js";
+import Image from "./Image.js";
 
 class Button extends DOM {
   constructor(iconSrc, className) {
     super('button', '', className);
     if (iconSrc) {
-      this.icon = new Img(iconSrc, 'Button icon', 'button-icon').node;
+      this.icon = new Image(iconSrc, 'Button icon', 'button-icon').node;
       this.node.appendChild(this.icon);
     }
   }
