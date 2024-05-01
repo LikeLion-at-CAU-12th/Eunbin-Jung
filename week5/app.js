@@ -62,9 +62,7 @@ function displayScore() { //스코어 보여주기
 function updateScore(playerChoice, computerChoice) { //스코어 업데이트 + 승패 비교하기
   if (playerChoice === computerChoice) {
     return "draw";
-  }
-
-  if ((playerChoice === "rock" && computerChoice === "scissors") ||
+  } else if ((playerChoice === "rock" && computerChoice === "scissors") ||
       (playerChoice === "scissors" && computerChoice === "paper") ||
       (playerChoice === "paper" && computerChoice === "rock")) {
     myScoreValue += 1;
