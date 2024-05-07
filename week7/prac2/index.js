@@ -44,6 +44,11 @@ async function getData(){
 
     const button = document.createElement('button');
     button.innerText = "더보기";
+    // 버튼 누르면 상세정보 볼 수 있는 페이지로 이동
+    button.addEventListener("click", () => {
+      const queryString = `image=${data.galWebImageUrl}&title=${data.galTitle}&date=${data.galCreatedtime}&photographer=${data.galPhotographer}&keyword=${data.galSearchKeyword}`;
+      window.location.href = `details.html?${queryString}`;
+    });
 
     list.appendChild(image);
     list.appendChild(info);
