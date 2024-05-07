@@ -9,6 +9,7 @@ const imageUrl = urlParams.get("image");
 const title = urlParams.get("title");
 
 const date = urlParams.get("date");
+//날짜 YY/MM/DD 형식으로 변환
 const year = date.substring(2, 4).padStart(2, '0');
 const month = date.substring(4, 6).padStart(2, '0');
 const day = date.substring(6, 8).padStart(2, '0');
