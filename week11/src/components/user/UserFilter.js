@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import { filterType } from '../../constants/filtertype';
 import { getGenderUser, getPerPage, getPartUser } from '../../apis/userlist';
 
 const UserFilter = ({setFilter, setCurPage, setUserData}) => {
+  const [curFilter, setCurFilter] = useState('');
+
   const handleClick = async(type, param) => {
     if(type === "all"){
       const response = await getPerPage(1);
@@ -23,12 +25,16 @@ const UserFilter = ({setFilter, setCurPage, setUserData}) => {
       setCurPage(1);
     }
     setFilter(param); //param 대신 다른 값으로 변경 가능, 색상 변경할 때 잘 이용하기!
+    setCurFilter(param);
   }
   return (
     <FilterLayout>{filterType.map(
       (data, idx) => 
-      <FilterBox key={idx} 
-      onClick={() => handleClick(data.type, data.param)}>{data.title}</FilterBox>
+      <FilterBox 
+      key={idx}
+      $active={curFilter === data.param ? true : false}
+      onClick={() => handleClick(data.type, data.param)}>{data.title}
+      </FilterBox>
     )}</FilterLayout>
   );
 };
@@ -52,7 +58,7 @@ gap: 2rem;
 const FilterBox = styled.div`
 display: flex;
 padding: 1rem 4rem 1rem 4rem;
-background-color: "#C9C9C9";
+background-color: ${(props) => props.$active ? "#FF7F3E" : "#C9C9C9"};
 border-radius: 1rem;
 font-size: 3rem;
 whith-space: nowrap;
