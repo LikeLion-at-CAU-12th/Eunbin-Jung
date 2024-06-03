@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { filterType } from '../../constants/filtertype';
-import { getGenderUser, getPerPage } from '../../apis/userlist';
+import { getGenderUser, getPerPage, getPartUser } from '../../apis/userlist';
 
 const UserFilter = ({setFilter, setCurPage, setUserData}) => {
   const handleClick = async(type, param) => {
@@ -16,6 +16,10 @@ const UserFilter = ({setFilter, setCurPage, setUserData}) => {
       const response = await getGenderUser(param);
       setUserData(response);
       console.log(response);
+      setCurPage(1);
+    } else if (type === "part"){
+      const response = await getPartUser(param);
+      setUserData(response);
       setCurPage(1);
     }
     setFilter(param); //param 대신 다른 값으로 변경 가능, 색상 변경할 때 잘 이용하기!
