@@ -17,10 +17,10 @@ const UserInfo = () => {
         setUserData={setUserData} 
         setCurPage={setCurPage} />
         <UserSection userData={userData} />
-        <PageSelction
+        {filter === "all" && <PageSelction
         curPage={curPage}
         setUserData={setUserData} 
-        setCurPage={setCurPage}/>
+        setCurPage={setCurPage}/>}
       </ContentBox>
     </MainLayout>
   );

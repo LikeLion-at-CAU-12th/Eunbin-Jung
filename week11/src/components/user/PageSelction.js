@@ -15,7 +15,7 @@ const PageSelction = ({curPage, setUserData, setCurPage}) => {
       <PageBox
       key={val} 
       $active={val === curPage ? true : false} 
-      onClick={handleClick(val)}>
+      onClick={() => handleClick(val)}>
         {val}
       </PageBox>
       )}</SelectionLayout>
