@@ -12,12 +12,10 @@ const UserFilter = ({setFilter, setCurPage, setUserData}) => {
       //response 값을 저장하기 위해서 새로운 상태(state)가 필요하다!
       //useState를 이용해서 이 값을 저장해주도록 하자!
       setUserData(response);
-      console.log(response);
       setCurPage(1); //현재 페이지 1로 초기화
     } else if (type === "gender"){
       const response = await getGenderUser(param);
       setUserData(response);
-      console.log(response);
       setCurPage(1);
     } else if (type === "part"){
       const response = await getPartUser(param);

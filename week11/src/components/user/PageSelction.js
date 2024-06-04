@@ -4,8 +4,12 @@ import { getPerPage } from '../../apis/userlist';
 
 const PageSelction = ({curPage, setUserData, setCurPage}) => {
   const handleClick = async(page) => {
-    const response = await getPerPage(page);
-    setUserData(response);
+    const response = await getPerPage(0); //전체 데이터 받아서 저장
+    const totalPage = 5;
+    const offset = (page - 1) * totalPage;
+    const slicedData = response.slice(offset, offset + totalPage); //5개씩 잘라서 직접 페이지 구분
+
+    setUserData(slicedData);
     setCurPage(page);
   }
 
