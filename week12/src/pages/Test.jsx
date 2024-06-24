@@ -37,33 +37,38 @@ const Test = () => {
   return(
     <MenuDom>
       <Title>🦁멋사인 테스트🦁</Title>
-      <ul>
+      <QuestionList>
       {questions.map((question) => (
-          <li key={question.id}>
-            <p>{question.question}</p>
-            {question.choices.map((choice, index) => (
-              <label key={index}>
-                <input
+          <QuestionItem key={question.id}>
+            <QuestionText>{question.id}. {question.question}</QuestionText>
+            {question.choices.map((choice, index) => {
+               const isChecked = answers[question.id] === index + 1;
+               return(
+                <ChoiceLabel key={index} checked={isChecked}>
+                <ChoiceInput
                   type="radio"
                   name={`question_${question.id}`}
                   value={index + 1}
+                  checked={isChecked}
                   onChange={() => handleAnswerChange(question.id, index + 1)}
                 />
-                {choice}
-              </label>
-            ))}
-          </li>
+                <ChoiceText>{choice}</ChoiceText>
+              </ChoiceLabel>
+               )
+               })}
+          </QuestionItem>
         ))}
-      </ul>
-      <button onClick={handleSubmit}>제출</button>
+      </QuestionList>
+      <SubmitButton onClick={handleSubmit}>제출</SubmitButton>
     </MenuDom>
   );
-  };
+};
 
-export default Test
+export default Test;
 
 const MenuDom = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: start;
   align-items: center;
   gap: 20px;
@@ -76,4 +81,63 @@ const Title = styled.div`
   font-size: 40px;
   color: #535353;
   font-weight: 700;
+  margin-bottom: 20px;
+`;
+
+const QuestionList = styled.ul`
+  list-style: none;
+  padding: 0;
+  width: 60%;
+`;
+
+const QuestionItem = styled.li`
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;  
+  margin-bottom: 30px;
+`;
+
+const QuestionText = styled.p`
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+`;
+
+const ChoiceLabel = styled.label`
+  display: block;
+  background-color: ${({ checked }) => (checked ? '#b0e0e6' : '#e0e0e0')};
+  font-weight: ${({ checked }) => (checked ? 'bold' : 'normal')};
+  font-size: ${({ checked }) => (checked ? '25px' : '18px')};
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background: #d0d0d0;
+  }
+`;
+
+const ChoiceInput = styled.input`
+  display: none;
+`;
+
+const ChoiceText = styled.span`
+  padding: 5px;
+  border-radius: 5px;
+`;
+
+const SubmitButton = styled.button`
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'EF_jejudoldam';
+
+  &:hover {
+    background: #45a049;
+  }
 `;

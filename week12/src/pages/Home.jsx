@@ -7,7 +7,7 @@ const Home = () => {
     <MenuDom>
       <Title>당신의 멋사력은❓🦁🤔</Title>
       <StyledLink to="/question">
-        ✍️멋사인 테스트
+        ✍️ 멋사인 테스트
       </StyledLink>
     </MenuDom>
   );
@@ -45,4 +45,5 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   font-weight: 500;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 5%;
 `;

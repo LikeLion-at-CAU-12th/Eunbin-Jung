@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Route, BrowserRouter} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import Home from "./pages/Home";
 import Test from "./pages/Test";
 import TestResult from "./pages/TestResult";
@@ -8,14 +8,14 @@ import TestResult from "./pages/TestResult";
 function App() {
   return (
     <AppDom>
-      <BrowserRouter>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/question" element={<Test />} />
-        <Route path="/reslut/:num" element={<TestResult />} />
-      </BrowserRouter>
+        <Route path="/result/:num" element={<TestResult />} />
+      </Routes>
     </AppDom>
-  )
-}
+  );
+};
 
 export default App;
 
