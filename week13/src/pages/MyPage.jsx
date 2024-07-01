@@ -23,7 +23,7 @@ const MyPage = () => {
   return (
     <Wrapper>
       <Title>Welcome {userName}🤗</Title>
-      <Button mode={mode.button} onClick={handleReset}>리셋</Button>
+      <Button mode={mode.button} onClick={handleReset}>🏠</Button>
     </Wrapper>
   )
 }

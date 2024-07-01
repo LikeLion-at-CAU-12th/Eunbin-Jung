@@ -16,3 +16,9 @@ export const isSubmittedAtom = atom({
   key: "isSubmitted",
   default: false,
 });
+
+
+export const dateAtom = atom({
+  key: "date",
+  default: "2024-06-26",
+});
