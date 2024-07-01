@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'EF_jejudoldam';
+  src: url('./font/EF_jejudoldam\(윈도우용_TTF\).ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: 'EF_jejudoldam';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #EDFBFF;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
