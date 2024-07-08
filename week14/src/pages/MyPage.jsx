@@ -23,7 +23,12 @@ const MyPage = () => {
        setLoading(false);
       })
       .catch((error) => {
-        alert("토근 기한 만료");
+        alert("토큰 기한 만료");
+
+        //토큰 기한 만료시 로그아웃 되고 로그인 페이지로 이동
+        localStorage.removeItem("access")
+        localStorage.removeItem("refresh")
+        router('/');
       });
   }, []);
 
