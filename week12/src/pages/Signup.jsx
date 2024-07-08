@@ -7,13 +7,11 @@ import { useForm } from '../hooks/useForm';
 const Signup = () => {
     const [id, onChangeId] = useForm();
     const [pw, onChangePw] = useForm();
-    const [name, onChangeName] = useForm();
-    const [age, onChangeAge] = useForm();
 
     const router = useNavigate();
 
     const onClick = async () => {
-      await signUp(id, pw, name, age);
+      await signUp(id, pw);
       alert("회원가입이 완료되었습니다.")
       router("/login");
     }
@@ -26,10 +24,6 @@ const Signup = () => {
         <input value={id} onChange={onChangeId}/>
         <div>비밀번호</div>
         <input value={pw} onChange={onChangePw}/>
-        <div>이름</div>
-        <input value={name} onChange={onChangeName}/>
-        <div>나이</div>
-        <input value={age} onChange={onChangeAge}/>
       </Inputs>
       <button onClick={onClick}>가입하기</button>
     </Wrapper>

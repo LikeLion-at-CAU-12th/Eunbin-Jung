@@ -34,9 +34,15 @@ const Test = () => {
       });
   };
 
+   const handleLogout = ()=>{
+    localStorage.removeItem("access")
+    localStorage.removeItem("refresh")
+    navigate('/');
+  }
+
   return(
     <MenuDom>
-      {/* <Header></Header> */}
+      <Button onClick={handleLogout}>로그아웃</Button>
       <Title>🦁멋사인 테스트🦁</Title>
       <QuestionList>
       {questions.map((question) => (
@@ -142,3 +148,21 @@ const SubmitButton = styled.button`
     background: #45a049;
   }
 `;
+
+const Button = styled.div`
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 10px;
+  font-family: 'EF_jejudoldam';
+  width: 40px;
+  text-align: center;
+  margin-left: 60%;
+
+  &:hover {
+    background: #45a049;
+  }
+  `;
