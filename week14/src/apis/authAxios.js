@@ -10,13 +10,13 @@ export const getAuthAxios = (token) => {
     }
   });
   authAxios.interceptors.response.use(
-    (response)=>response,
+    (response) => response.data,
     async (error) => {
       const result = getNewRefreshToken();
       error.config.headers.Authorization = result.accessToken;
       localStorage.setItem("access", result.accessToken);
       localStorage.setItem("refresh", result.refreshToken);
-      return await axios.get(error.config.url, error.config);
+      return (await axios.get(error.config.url, error.config)).data;
     }
   );
   return authAxios;

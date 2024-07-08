@@ -22,10 +22,10 @@ export const login = async (id, pw) => {
   return result.data;
 };
 
-export const getMyPage = async () => {
-  const authAxios = getAuthAxios()
+export const getMyPage = async (token) => {
+  const authAxios = getAuthAxios(token)
   const result = authAxios.get("/mypage");
-  return result.data;
+  return result;
 };
 
 export const getNewRefreshToken = async () => {

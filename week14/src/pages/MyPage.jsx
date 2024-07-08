@@ -7,7 +7,7 @@ const MyPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(()=>{
-    getMyPage()
+    getMyPage(localStorage.getItem("access"))
       .then((data)=>{
        setData(data);
        setLoading(false);

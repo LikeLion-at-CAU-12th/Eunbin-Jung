@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import {Link, useNavigate} from 'react-router-dom'
 import { useForm } from '../hooks/useForm';
@@ -10,6 +10,16 @@ const Home = () => {
 
   const router = useNavigate();
 
+
+  // 로그인이 되어 있는 상태라면 마이페이지로 이동
+  useEffect(() => {
+    const savedAccessToken = localStorage.getItem("access");
+    if (savedAccessToken) {
+      router('/mypage');
+    }
+  }, []);
+
+
   const onClick = async () => {
     try{
       const result = await login(id, pw);
@@ -20,6 +30,7 @@ const Home = () => {
       alert("id나 pw를 확인하세요")
     }
   }
+
 
   return (
     <>
