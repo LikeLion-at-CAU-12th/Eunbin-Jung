@@ -36,6 +36,7 @@ const Test = () => {
 
   return(
     <MenuDom>
+      {/* <Header></Header> */}
       <Title>🦁멋사인 테스트🦁</Title>
       <QuestionList>
       {questions.map((question) => (
